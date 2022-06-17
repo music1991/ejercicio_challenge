@@ -1,6 +1,3 @@
-import React from "react";
-import useCollapse from 'react-collapsed';
-
 /* Descripcion*/
 /*
 
@@ -9,25 +6,37 @@ PersonalInformation.js:
 -Retorna en un div los datos de Informacion Personal.
 */
 
+
+import React from "react";
+import Card from "./Card";
+
+
 const PersonalInformation = ({ name, picture }) => {
-    const { getCollapseProps, getToggleProps } = useCollapse();
-
     return(
-        <div className="collapsible">
-            <div className="header" {...getToggleProps()}>
-                Informacion Personal
-            </div>
-
-            <div {...getCollapseProps()}>
-                <div className="content">
+        <div>
+            <Card>
+                <div className="title_card">
+                    Información Personal
+                </div>
+                <Card.CardContent>
+                
+                <div>
                     <b>Nombre: </b>{name.first}
                     <br/>
                     <b>Apellido: </b>{name.last}
                     <br />
                     <img src={picture.large} alt={"foto_perfil"}/>
                 </div>
-            </div>
-        </div>
+                </Card.CardContent>
+
+                <Card.Expand>
+                    <div className="button-up"></div>
+                </Card.Expand>
+                <Card.Collapse>
+                    <div className="button-down"></div>
+                </Card.Collapse>
+            </Card>
+        </div>        
     );
 }
 

@@ -69,9 +69,6 @@ import Message from "./Message";
 import PersonalPerson from "./PersonalPerson";
 
 
-//COMENTARIOS
-
-
 const Api = () => {       
     const [prev_person, setPrev_person] = useState(null);
     const [person, setPerson] = useState(null);
@@ -137,7 +134,6 @@ const Api = () => {
             {error && <Message msg={`Error: ${error.statusText}`} bgColor="#dc3545"/>}
 
             {person && <PersonalPerson person={person} handlePrevius={handlePrevius} handleNext={handleNext} visiblePreviusButton={visiblePreviusButton} />}
-
 
             <h4>Contador de personas visualizadas: {consult_counter}</h4>
         </div>

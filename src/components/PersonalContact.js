@@ -1,6 +1,3 @@
-import React from "react";
-import useCollapse from 'react-collapsed';
-
 /* Descripcion*/
 /*
 
@@ -9,23 +6,35 @@ PersonalContact.js:
 -Retorna en un div los datos de Contact.
 */
 
+
+import React from "react";
+import Card from "./Card";
+
+
 const PersonalContact = ({ email, phone }) => {
-    const { getCollapseProps, getToggleProps } = useCollapse();
-
-    return(
-        <div className="collapsible">
-            <div className="header" {...getToggleProps()}>
-            Contacto
-            </div>
-
-            <div {...getCollapseProps()}>
-                <div className="content">
+    return(       
+        <div>
+            <Card>
+                <div className="title_card">
+                    Contacto
+                </div>
+                <Card.CardContent>
+                
+                <div>
                     <b>Email: </b>{email}
                     <br/>
                     <b>Telefono: </b>{phone}
                 </div>
-            </div>
-        </div>         
+                </Card.CardContent>
+
+                <Card.Expand>
+                    <div className="button-up"></div>
+                </Card.Expand>
+                <Card.Collapse>
+                    <div className="button-down"></div>
+                </Card.Collapse>
+            </Card>
+        </div>        
     );
 }
 

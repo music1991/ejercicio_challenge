@@ -1,3 +1,10 @@
+/* Descripcion*/
+/*
+
+Loader.js define un div con la clase lds-ellipsis y a su vez contiene divs en blanco.
+*/
+
+
 import React from 'react';
 import './Loader.css';
 

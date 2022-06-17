@@ -1,8 +1,3 @@
-import React from "react";
-import PersonalContact from "./PersonalContact";
-import PersonalDirection from "./PersonalDirection";
-import PersonalInformation from "./PersonalInformation";
-
 /* Descripcion*/
 /*
 
@@ -18,6 +13,14 @@ PersonalPerson.js:
         Tambien mostrara visiblePreviusButton como bandera en el atributo disabled.
         *Sigueinte, el cual tiene como evento un onClick, que activa la funcion handleNext.
 */
+
+
+import React from "react";
+import PersonalContact from "./PersonalContact";
+import PersonalDirection from "./PersonalDirection";
+import PersonalInformation from "./PersonalInformation";
+
+
 const PersonalPerson = ({ person, handlePrevius, handleNext, visiblePreviusButton }) => {   
     const name = person.name;
     const picture = person.picture;
@@ -30,14 +33,11 @@ const PersonalPerson = ({ person, handlePrevius, handleNext, visiblePreviusButto
     return(
         <div>
             <PersonalInformation name={name} picture={picture} />
-            <br />
             <PersonalDirection location={location} />
-            <br />
             <PersonalContact email={email} phone={phone} />
-            <br />
-            <br />
+            <br/>
             <button onClick={handlePrevius} disabled={visiblePreviusButton} >Anterior</button>
-            <button onClick={handleNext}>Siguiente</button>            
+            <button onClick={handleNext}>Siguiente</button>             
         </div>
     );
 }

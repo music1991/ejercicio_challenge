@@ -1,6 +1,15 @@
+/* Descripcion*/
+/*
+
+Loader.css
+Estilos para el componente Loader.js
+*/
+
+
 .lds-ellipsis {
   display: inline-block;
   position: relative;
+  margin-left: 150px;
   width: 80px;
   height: 80px;
 }

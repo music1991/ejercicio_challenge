@@ -1,3 +1,13 @@
+/* Descripcion*/
+/*
+
+Message.js:
+-Recibe como props msg, bgColor
+-Define styles
+-Retorna un div con el estilo descripto en styles, y muestra la props msg recibida.
+*/
+
+
 import React from 'react';
 
 const Message = ({ msg, bgColor}) => {
