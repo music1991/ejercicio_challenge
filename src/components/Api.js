@@ -67,6 +67,7 @@ import Loader from "./Loader";
 import Message from "./Message";
 
 import PersonalPerson from "./PersonalPerson";
+import styled from "styled-components";
 
 
 //COMENTARIOS
@@ -127,20 +128,35 @@ const Api = () => {
         setVisiblePreviusButton(false);
     }
 
+    const Container = styled.div`
+        border: 1px solid red;
+        border-radius: 16px;
+        padding-left: 25px;
+        padding-right: 25px;
+        background-color: white;
+        border-width: 5px;
+        border-color: #CCDBFD;
+        width: 70%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+    `
+
 
     return(
-        <div>
-            <h1>Persona</h1>
-            
-            {loading && <Loader />}
+        <Container>
+            <h2 style={{color: '#9e9e9e', justifyContent: 'center', display:'flex'}}>Person</h2>
+            .
+            {loading && <div style={{display: 'flex', justifyContent: 'center', paddingTop: '10%', paddingBottom: '10%'}}><Loader /></div>}
 
             {error && <Message msg={`Error: ${error.statusText}`} bgColor="#dc3545"/>}
 
-            {person && <PersonalPerson person={person} handlePrevius={handlePrevius} handleNext={handleNext} visiblePreviusButton={visiblePreviusButton} />}
+            {!loading && person && <PersonalPerson person={person} handlePrevius={handlePrevius} handleNext={handleNext} visiblePreviusButton={visiblePreviusButton} />}
 
 
-            <h4>Contador de personas visualizadas: {consult_counter}</h4>
-        </div>
+            <h4 style={{marginTop: '10%', color: '#9e9e9e', justifyContent: 'flex-end', display:'flex'}}>Contador de personas visualizadas: {consult_counter}</h4>
+        </Container>
     );
 }
 

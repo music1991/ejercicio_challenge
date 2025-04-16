@@ -19,3 +19,10 @@ button {
   cursor: pointer;
 }
 
+body {
+  background-color: #347992;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}

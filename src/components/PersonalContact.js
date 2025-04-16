@@ -1,5 +1,7 @@
 import React from "react";
 import useCollapse from 'react-collapsed';
+import { Item } from "./PersonalInformation";
+import { ArrowIcon } from "./PersonalDirection";
 
 /* Descripcion*/
 /*
@@ -10,19 +12,18 @@ PersonalContact.js:
 */
 
 const PersonalContact = ({ email, phone }) => {
-    const { getCollapseProps, getToggleProps } = useCollapse();
+    const { getCollapseProps, getToggleProps, isExpanded } = useCollapse({ defaultExpanded: false});
 
     return(
         <div className="collapsible">
-            <div className="header" {...getToggleProps()}>
-            Contacto
+            <div className="header" {...getToggleProps()} style={{display: 'flex'}}>
+                <ArrowIcon $isExpanded={isExpanded} />
+                Contact
             </div>
-
             <div {...getCollapseProps()}>
                 <div className="content">
-                    <b>Email: </b>{email}
-                    <br/>
-                    <b>Telefono: </b>{phone}
+                    <Item><u>Email</u>: {email}</Item>
+                    <Item><u>Phone</u>: {phone}</Item>
                 </div>
             </div>
         </div>         
